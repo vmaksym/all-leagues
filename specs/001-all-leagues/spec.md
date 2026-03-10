@@ -1,6 +1,6 @@
 # Feature Specification: Sports Leagues Explorer
 
-**Feature Branch**: `[001-signals-leagues-spa]`  
+**Feature Branch**: `[001-all-leagues]`  
 **Created**: 2026-03-10  
 **Status**: Draft  
 **Input**: User description: "Build a single-page application that consumes the All Leagues API, displays leagues with filters, supports league click-to-load season badges, and caches responses to avoid repeat calls."
