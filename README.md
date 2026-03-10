@@ -48,7 +48,7 @@ Implementation follows an AI-assisted workflow where feature specs, plans, and t
 1. Clone the repository:
 
 ```bash
-git clone <your-repository-url>
+git clone git@github.com:vmaksym/all-leagues.git
 cd all-leagues
 ```
 
