@@ -73,16 +73,62 @@
         <p class="badge-panel__meta">{{ selectedLeagueAlternateName() }}</p>
 
         @if (selectedBadgeState() === 'loading') {
-          <p class="badge-panel__empty">Loading badge...</p>
+          <div class="badge-panel__media badge-panel__media--placeholder">
+            <div class="badge-panel__placeholder-content flex flex-col items-center justify-center gap-2">
+              <svg
+                class="badge-panel__placeholder-icon"
+                viewBox="0 0 24 24"
+                role="img"
+                aria-label="Loading image"
+              >
+                <path
+                  d="M12 3a9 9 0 1 0 9 9"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.8"
+                  stroke-linecap="round"
+                />
+              </svg>
+              <p class="badge-panel__placeholder-label">Loading badge...</p>
+            </div>
+          </div>
         } @else if (selectedBadgeUrl()) {
-          <img
-            [src]="selectedBadgeUrl()!"
-            [alt]="selectedLeague()!.strLeague + ' badge'"
-            width="240"
-            height="240"
-          />
+          <div class="badge-panel__media badge-panel__media--filled">
+            <img
+              [src]="selectedBadgeUrl()!"
+              [alt]="selectedLeague()!.strLeague + ' badge'"
+              width="240"
+              height="240"
+            />
+          </div>
         } @else if (selectedBadgeState() === 'empty') {
-          <p class="badge-panel__empty">No badge available for this league.</p>
+          <div class="badge-panel__media badge-panel__media--placeholder">
+            <div class="badge-panel__placeholder-content flex flex-col items-center justify-center gap-2">
+              <svg
+                class="badge-panel__placeholder-icon"
+                viewBox="0 0 24 24"
+                role="img"
+                aria-label="No image available"
+              >
+                <path
+                  d="M4 5.5A1.5 1.5 0 0 1 5.5 4h13A1.5 1.5 0 0 1 20 5.5v13a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 4 18.5z"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.6"
+                />
+                <path
+                  d="M7.5 15.5l3-3 2.2 2.2 1.6-1.6 2.2 2.4"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.6"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <circle cx="9" cy="9" r="1.1" fill="currentColor" />
+              </svg>
+              <p class="badge-panel__placeholder-label">No image available</p>
+            </div>
+          </div>
         }
 
         @if (selectedBadgeError()) {

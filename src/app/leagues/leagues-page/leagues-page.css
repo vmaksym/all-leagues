@@ -1,6 +1,6 @@
 .dashboard-shell {
   min-height: 100vh;
-  background: linear-gradient(180deg, #f7f6f2 0%, #eef4f7 100%);
+  background: #f4f6f8;
   color: var(--color-text);
 }
 
@@ -8,9 +8,9 @@
   position: sticky;
   top: 0;
   z-index: 20;
-  background: rgba(255, 255, 255, 0.92);
-  border-bottom: 1px solid var(--color-border);
-  backdrop-filter: blur(6px);
+  background: linear-gradient(90deg, #0f3d2e, #1db954);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.22);
+  box-shadow: 0 8px 24px rgba(15, 61, 46, 0.22);
   padding: 1rem clamp(1rem, 3vw, 2rem);
 }
 
@@ -18,11 +18,12 @@
   margin: 0;
   font-size: clamp(1.25rem, 2vw, 1.7rem);
   letter-spacing: 0.01em;
+  color: #ffffff;
 }
 
 .dashboard-header p {
   margin: 0.25rem 0 0;
-  color: var(--color-muted);
+  color: rgba(255, 255, 255, 0.9);
 }
 
 .dashboard-layout {
@@ -34,11 +35,11 @@
 
 .dashboard-sidebar,
 .badge-panel,
-.status-panel,
-.league-grid {
+.status-panel {
   border: 1px solid var(--color-border);
   border-radius: 14px;
   background: var(--color-surface);
+  box-shadow: 0 8px 24px rgba(15, 61, 46, 0.08);
 }
 
 .dashboard-sidebar,
@@ -66,12 +67,14 @@
   padding: 0.6rem 0.75rem;
   font: inherit;
   background: #fff;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 .control-group input:focus-visible,
 .control-group select:focus-visible {
-  outline: 3px solid var(--color-focus);
-  outline-offset: 1px;
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 3px var(--color-focus);
+  outline: none;
 }
 
 .sidebar-meta {
@@ -93,13 +96,14 @@
 .league-grid {
   display: grid;
   gap: 0.9rem;
-  padding: 0.9rem;
+  padding: 0.2rem;
   grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
 }
 
 .badge-panel h2 {
   margin: 0;
   font-size: 1.05rem;
+  color: var(--color-text);
 }
 
 .badge-panel__title {
@@ -118,13 +122,44 @@
   max-width: 240px;
   height: auto;
   border-radius: 12px;
-  border: 1px solid var(--color-border);
-  background: #fff;
 }
 
 .badge-panel__empty {
   margin-top: 0.75rem;
   color: var(--color-muted);
+}
+
+.badge-panel__media {
+  margin-top: 0.8rem;
+  width: 100%;
+  min-height: 240px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.badge-panel__media--filled {
+  background: linear-gradient(135deg, #f7fffa, #ecf8f1);
+}
+
+.badge-panel__media--placeholder {
+  background: #edf1f4;
+}
+
+.badge-panel__placeholder-content {
+  text-align: center;
+  color: #62727f;
+}
+
+.badge-panel__placeholder-icon {
+  width: 2.2rem;
+  height: 2.2rem;
+}
+
+.badge-panel__placeholder-label {
+  margin: 0;
+  font-size: 0.86rem;
 }
 
 .badge-panel__error {

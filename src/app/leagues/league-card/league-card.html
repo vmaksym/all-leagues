@@ -2,18 +2,29 @@
   type="button"
   class="league-card"
   [class.league-card--selected]="selected()"
+  [style.--league-accent]="leagueAccentColor()"
   (click)="onSelect()"
   [attr.aria-pressed]="selected()"
 >
-  <h3 class="league-card__title">{{ league().strLeague }}</h3>
-  <p class="league-card__meta">Sport: {{ league().strSport }}</p>
+  <div class="league-card__top">
+    <h3 class="league-card__title">{{ league().strLeague }}</h3>
+    <span class="league-card__chip">{{ league().strSport }}</span>
+  </div>
+
+  <p class="league-card__meta">Country: {{ league().strCountry || 'Global' }}</p>
   <p class="league-card__meta">Alt name: {{ league().strLeagueAlternate || 'No alternate name' }}</p>
 
-  @if (loadingBadge()) {
-    <p class="league-card__hint">Loading badge...</p>
-  } @else if (badgeUrl()) {
-    <p class="league-card__hint">Badge loaded</p>
-  } @else {
-    <p class="league-card__hint">Select to load season badge</p>
-  }
+  <div class="league-card__footer">
+    <span class="league-card__hint">
+      @if (loadingBadge()) {
+        Loading badge...
+      } @else if (badgeUrl()) {
+        Badge ready
+      } @else {
+        Select for season badge
+      }
+    </span>
+
+    <span class="league-card__id">{{ leagueTag() }}</span>
+  </div>
 </button>

@@ -1,12 +1,12 @@
 :root {
 	color-scheme: light;
-	--color-text: #1f2937;
-	--color-muted: #64748b;
+	--color-text: #0f3d2e;
+	--color-muted: #4e6b61;
 	--color-surface: #ffffff;
-	--color-border: #d6dde5;
-	--color-accent: #0e7490;
-	--color-accent-strong: #155e75;
-	--color-focus: #22d3ee;
+	--color-border: #dbe7df;
+	--color-accent: #1db954;
+	--color-accent-strong: #169448;
+	--color-focus: rgba(29, 185, 84, 0.35);
 }
 
 * {
@@ -22,5 +22,5 @@ body {
 body {
 	font-family: 'Avenir Next', 'Segoe UI', sans-serif;
 	color: var(--color-text);
-	background: #f3f7f9;
+	background: #f4f6f8;
 }
