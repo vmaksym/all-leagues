@@ -23,6 +23,7 @@ Default local URL is typically:
 - Sticky header is visible.
 - Left sidebar contains filters.
 - Main area shows a responsive card grid.
+- Right-side badge panel is visible on desktop.
 
 2. Verify leagues load:
 - League cards render name, sport, and alternate name/fallback text.
@@ -44,6 +45,9 @@ Default local URL is typically:
 
 6. Verify responsiveness:
 - Check mobile, tablet, and desktop widths for usable layout and no horizontal overflow.
+
+7. Verify route/bootstrap behavior:
+- Opening `/` renders the leagues page via router lazy loading.
 
 ## Build
 ```bash

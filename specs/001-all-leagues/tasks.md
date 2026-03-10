@@ -19,9 +19,9 @@ implementation and manual validation of each story.
 
 **Purpose**: Project initialization and UI baseline setup
 
-- [ ] T001 Create feature folder scaffolding for leagues flow in src/app/leagues/
-- [ ] T002 Define global light-theme dashboard tokens and base utilities in src/styles.css
-- [ ] T003 [P] Prepare application shell placeholders for feature mount points in src/app/app.html
+- [X] T001 Create feature folder scaffolding for leagues flow in src/app/leagues/
+- [X] T002 Define global light-theme dashboard tokens and base utilities in src/styles.css
+- [X] T003 [P] Prepare application shell placeholders for feature mount points in src/app/app.html
 
 ---
 
@@ -31,13 +31,13 @@ implementation and manual validation of each story.
 
 **⚠️ CRITICAL**: No user story work can begin until this phase is complete
 
-- [ ] T004 Create typed league domain and DTO interfaces from all_leagues contract in src/app/core/models/league.models.ts
-- [ ] T005 [P] Create season badge and cache entry interfaces in src/app/core/models/badge.models.ts
-- [ ] T006 Create SportsDB API endpoint configuration constants in src/app/core/config/sportsdb.config.ts
-- [ ] T007 [P] Implement HTTP integration service for all_leagues and search_all_seasons endpoints in src/app/core/services/sportsdb.service.ts
-- [ ] T008 [P] Implement DTO mapping and safe fallback helpers for nullable fields in src/app/core/services/sportsdb.mapper.ts
-- [ ] T009 Implement leagues feature signal store skeleton (state, computed, actions) in src/app/leagues/state/leagues.store.ts
-- [ ] T010 Wire HttpClient providers and feature-level DI configuration in src/app/app.config.ts
+- [X] T004 Create typed league domain and DTO interfaces from all_leagues contract in src/app/core/models/league.models.ts
+- [X] T005 [P] Create season badge and cache entry interfaces in src/app/core/models/badge.models.ts
+- [X] T006 Create SportsDB API endpoint configuration constants in src/app/core/config/sportsdb.config.ts
+- [X] T007 [P] Implement HTTP integration service for all_leagues and search_all_seasons endpoints in src/app/core/services/sportsdb.service.ts
+- [X] T008 [P] Implement DTO mapping and safe fallback helpers for nullable fields in src/app/core/services/sportsdb.mapper.ts
+- [X] T009 Implement leagues feature signal store skeleton (state, computed, actions) in src/app/leagues/state/leagues.store.ts
+- [X] T010 Wire HttpClient providers and feature-level DI configuration in src/app/app.config.ts
 
 **Checkpoint**: Foundation ready - user story implementation can now begin
 
@@ -51,15 +51,15 @@ implementation and manual validation of each story.
 
 ### Implementation for User Story 1
 
-- [ ] T011 [P] [US1] Create standalone league card component class and inputs in src/app/leagues/league-card/league-card.ts
-- [ ] T012 [P] [US1] Build league card markup for name, sport, and alternate fallback text in src/app/leagues/league-card/league-card.html
-- [ ] T013 [P] [US1] Add league card styles for clean readable layout in src/app/leagues/league-card/league-card.css
-- [ ] T014 [US1] Implement initial leagues load workflow with loading/empty/error state transitions in src/app/leagues/state/leagues.store.ts
-- [ ] T015 [US1] Create standalone leagues page container and inject feature store in src/app/leagues/leagues-page/leagues-page.ts
-- [ ] T016 [P] [US1] Implement dashboard template with sticky header, sidebar shell, and responsive card grid in src/app/leagues/leagues-page/leagues-page.html
-- [ ] T017 [P] [US1] Add responsive dashboard styles for header/sidebar/grid behavior in src/app/leagues/leagues-page/leagues-page.css
-- [ ] T018 [US1] Register leagues page route and default navigation in src/app/app.routes.ts
-- [ ] T019 [US1] Mount routed leagues experience in root app shell in src/app/app.ts
+- [X] T011 [P] [US1] Create standalone league card component class and inputs in src/app/leagues/league-card/league-card.ts
+- [X] T012 [P] [US1] Build league card markup for name, sport, and alternate fallback text in src/app/leagues/league-card/league-card.html
+- [X] T013 [P] [US1] Add league card styles for clean readable layout in src/app/leagues/league-card/league-card.css
+- [X] T014 [US1] Implement initial leagues load workflow with loading/empty/error state transitions in src/app/leagues/state/leagues.store.ts
+- [X] T015 [US1] Create standalone leagues page container and inject feature store in src/app/leagues/leagues-page/leagues-page.ts
+- [X] T016 [P] [US1] Implement dashboard template with sticky header, sidebar shell, and responsive card grid in src/app/leagues/leagues-page/leagues-page.html
+- [X] T017 [P] [US1] Add responsive dashboard styles for header/sidebar/grid behavior in src/app/leagues/leagues-page/leagues-page.css
+- [X] T018 [US1] Register leagues page route and default navigation in src/app/app.routes.ts
+- [X] T019 [US1] Mount routed leagues experience in root app shell in src/app/app.ts
 
 **Checkpoint**: User Story 1 should be fully functional and manually validatable independently.
 
@@ -73,12 +73,12 @@ implementation and manual validation of each story.
 
 ### Implementation for User Story 2
 
-- [ ] T020 [US2] Implement 300 ms debounced search input pipeline in feature state actions in src/app/leagues/state/leagues.store.ts
-- [ ] T021 [US2] Compute unique sorted sport filter options from loaded leagues in src/app/leagues/state/leagues.store.ts
-- [ ] T022 [US2] Implement case-insensitive combined filter computation (search + sport) in src/app/leagues/state/leagues.store.ts
-- [ ] T023 [P] [US2] Add search input and sport-select controls bound to store actions in src/app/leagues/leagues-page/leagues-page.html
-- [ ] T024 [US2] Render no-results messaging tied to filtered output in src/app/leagues/leagues-page/leagues-page.html
-- [ ] T025 [P] [US2] Add filter interaction styles for sidebar and mobile stacking behavior in src/app/leagues/leagues-page/leagues-page.css
+- [X] T020 [US2] Implement 300 ms debounced search input pipeline in feature state actions in src/app/leagues/state/leagues.store.ts
+- [X] T021 [US2] Compute unique sorted sport filter options from loaded leagues in src/app/leagues/state/leagues.store.ts
+- [X] T022 [US2] Implement case-insensitive combined filter computation (search + sport) in src/app/leagues/state/leagues.store.ts
+- [X] T023 [P] [US2] Add search input and sport-select controls bound to store actions in src/app/leagues/leagues-page/leagues-page.html
+- [X] T024 [US2] Render no-results messaging tied to filtered output in src/app/leagues/leagues-page/leagues-page.html
+- [X] T025 [P] [US2] Add filter interaction styles for sidebar and mobile stacking behavior in src/app/leagues/leagues-page/leagues-page.css
 
 **Checkpoint**: User Stories 1 and 2 should both work and be manually validated independently.
 
@@ -92,13 +92,13 @@ implementation and manual validation of each story.
 
 ### Implementation for User Story 3
 
-- [ ] T026 [US3] Extend badge API parsing for season records and first-available badge selection in src/app/core/services/sportsdb.service.ts
-- [ ] T027 [US3] Implement in-memory badge cache keyed by league identifier in src/app/leagues/state/leagues.store.ts
-- [ ] T028 [US3] Implement latest-click-wins request token handling for overlapping badge requests in src/app/leagues/state/leagues.store.ts
-- [ ] T029 [US3] Keep previous badge visible and set inline error state when new badge request fails in src/app/leagues/state/leagues.store.ts
-- [ ] T030 [US3] Add league selection event handling and badge panel bindings in container logic in src/app/leagues/leagues-page/leagues-page.ts
-- [ ] T031 [P] [US3] Render badge panel UI states (loading, ready, empty, error) in src/app/leagues/leagues-page/leagues-page.html
-- [ ] T032 [P] [US3] Add badge panel visual styles for image, placeholders, and inline errors in src/app/leagues/leagues-page/leagues-page.css
+- [X] T026 [US3] Extend badge API parsing for season records and first-available badge selection in src/app/core/services/sportsdb.service.ts
+- [X] T027 [US3] Implement in-memory badge cache keyed by league identifier in src/app/leagues/state/leagues.store.ts
+- [X] T028 [US3] Implement latest-click-wins request token handling for overlapping badge requests in src/app/leagues/state/leagues.store.ts
+- [X] T029 [US3] Keep previous badge visible and set inline error state when new badge request fails in src/app/leagues/state/leagues.store.ts
+- [X] T030 [US3] Add league selection event handling and badge panel bindings in container logic in src/app/leagues/leagues-page/leagues-page.ts
+- [X] T031 [P] [US3] Render badge panel UI states (loading, ready, empty, error) in src/app/leagues/leagues-page/leagues-page.html
+- [X] T032 [P] [US3] Add badge panel visual styles for image, placeholders, and inline errors in src/app/leagues/leagues-page/leagues-page.css
 
 **Checkpoint**: All user stories should now be independently functional and manually validatable.
 
@@ -108,9 +108,9 @@ implementation and manual validation of each story.
 
 **Purpose**: Improvements that affect multiple user stories
 
-- [ ] T033 [P] Optimize card rendering with stable trackBy and computed minimization in src/app/leagues/leagues-page/leagues-page.ts
-- [ ] T034 [P] Add accessibility labels, focus states, and keyboard semantics in src/app/leagues/leagues-page/leagues-page.html
-- [ ] T035 [P] Align manual validation script with implemented behavior in specs/001-all-leagues/quickstart.md
+- [X] T033 [P] Optimize card rendering with stable trackBy and computed minimization in src/app/leagues/leagues-page/leagues-page.ts
+- [X] T034 [P] Add accessibility labels, focus states, and keyboard semantics in src/app/leagues/leagues-page/leagues-page.html
+- [X] T035 [P] Align manual validation script with implemented behavior in specs/001-all-leagues/quickstart.md
 - [ ] T036 Run full manual acceptance checklist and capture completion notes in specs/001-all-leagues/checklists/requirements.md
 
 ---

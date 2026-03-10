@@ -1,0 +1,94 @@
+<div class="dashboard-shell">
+  <header class="dashboard-header">
+    <div>
+      <h1>Sports Leagues Explorer</h1>
+      <p>Search leagues, filter by sport, and open season badges instantly.</p>
+    </div>
+  </header>
+
+  <div class="dashboard-layout">
+    <aside class="dashboard-sidebar" aria-label="League filters">
+      <div class="control-group">
+        <label for="league-search">Search leagues</label>
+        <input
+          id="league-search"
+          name="league-search"
+          type="search"
+          [value]="searchQuery()"
+          placeholder="Type a league name"
+          (input)="onSearchInput($event)"
+          aria-label="Search leagues by name"
+        />
+      </div>
+
+      <div class="control-group">
+        <label for="sport-select">Sport type</label>
+        <select
+          id="sport-select"
+          name="sport-select"
+          [value]="selectedSport()"
+          (change)="onSportFilterChange($event)"
+          aria-label="Filter leagues by sport"
+        >
+          @for (sport of sportOptions(); track sport) {
+            <option [value]="sport">{{ sport === 'all' ? 'All sports' : sport }}</option>
+          }
+        </select>
+      </div>
+
+      <p class="sidebar-meta">Showing {{ filteredLeagues().length }} league(s)</p>
+    </aside>
+
+    <main class="dashboard-content" aria-live="polite">
+      @if (leaguesLoadError()) {
+        <section class="status-panel status-panel--error" role="alert">
+          {{ leaguesLoadError() }}
+        </section>
+      } @else if (isLeaguesLoading()) {
+        <section class="status-panel">Loading leagues...</section>
+      } @else if (filteredLeagues().length === 0) {
+        <section class="status-panel">No leagues match your current filters.</section>
+      } @else {
+        <section class="league-grid" aria-label="Leagues list">
+          @for (league of filteredLeagues(); track league.idLeague) {
+            <app-league-card
+              [league]="league"
+              [selected]="selectedLeagueId() === league.idLeague"
+              [loadingBadge]="isBadgeLoadingForLeague(league.idLeague)"
+              [badgeUrl]="badgeForLeague(league.idLeague)"
+              (selectedLeague)="onLeagueCardSelect($event)"
+            />
+          }
+        </section>
+      }
+    </main>
+
+    <aside class="badge-panel" aria-live="polite">
+      <h2>Season Badge</h2>
+
+      @if (!selectedLeague()) {
+        <p class="badge-panel__empty">Select a league card to view a season badge.</p>
+      } @else {
+        <p class="badge-panel__title">{{ selectedLeague()!.strLeague }}</p>
+        <p class="badge-panel__meta">{{ selectedLeagueAlternateName() }}</p>
+
+        @if (selectedBadgeState() === 'loading') {
+          <p class="badge-panel__empty">Loading badge...</p>
+        } @else if (selectedBadgeUrl()) {
+          <img
+            [src]="selectedBadgeUrl()!"
+            [alt]="selectedLeague()!.strLeague + ' badge'"
+            width="240"
+            height="240"
+          />
+        } @else if (selectedBadgeState() === 'empty') {
+          <p class="badge-panel__empty">No badge available for this league.</p>
+        }
+
+        @if (selectedBadgeError()) {
+          <p class="badge-panel__error" role="alert">{{ selectedBadgeError() }}</p>
+        }
+      }
+    </aside>
+  </div>
+</div>

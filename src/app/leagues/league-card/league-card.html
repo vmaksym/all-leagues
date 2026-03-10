@@ -1,0 +1,19 @@
+<button
+  type="button"
+  class="league-card"
+  [class.league-card--selected]="selected()"
+  (click)="onSelect()"
+  [attr.aria-pressed]="selected()"
+>
+  <h3 class="league-card__title">{{ league().strLeague }}</h3>
+  <p class="league-card__meta">Sport: {{ league().strSport }}</p>
+  <p class="league-card__meta">Alt name: {{ league().strLeagueAlternate || 'No alternate name' }}</p>
+
+  @if (loadingBadge()) {
+    <p class="league-card__hint">Loading badge...</p>
+  } @else if (badgeUrl()) {
+    <p class="league-card__hint">Badge loaded</p>
+  } @else {
+    <p class="league-card__hint">Select to load season badge</p>
+  }
+</button>

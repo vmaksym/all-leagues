@@ -33,3 +33,5 @@
 
 - Validation pass 1 completed on 2026-03-10.
 - No unresolved issues found; specification is ready for clarification or planning.
+- Implementation build validation completed on 2026-03-10 (`npm run build` succeeded).
+- Manual browser acceptance walkthrough is pending final interactive verification on local dev server.
