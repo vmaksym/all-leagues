@@ -1,53 +1,111 @@
-# AllLeagues
+# All Leagues
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.2.1.
+## Project Overview
 
-## Development server
+All Leagues is a frontend Single Page Application (SPA) for exploring sports leagues in a clean, dashboard-style interface.
 
-To start a local development server, run:
+The application:
+
+- displays football and other sports leagues
+- supports fast searching and filtering
+- renders leagues as cards in a responsive grid
+- focuses on a simple, readable, and efficient user experience
+
+This repository contains only the frontend. The backend already exists and exposes the API used by this app.
+
+## Technology Stack
+
+The project is built with:
+
+- Angular
+- TypeScript
+- REST API integration (frontend consumes existing backend endpoints)
+
+## Project Architecture
+
+The frontend is structured with a modular Angular approach:
+
+- UI built from Angular components
+- API communication handled by services
+- domain models and mappers used for stable data flow
+- feature-oriented folders for maintainability
+- responsive, card-based layout for desktop and mobile
+
+## Development Approach
+
+This project was generated and organized using SpecKit.
+
+SpecKit was used to define:
+
+- a project specification
+- a project constitution
+- development guidelines
+
+Implementation follows an AI-assisted workflow where feature specs, plans, and task artifacts guide development in a consistent and traceable way.
+
+## Installation
+
+1. Clone the repository:
+
+```bash
+git clone <your-repository-url>
+cd all-leagues
+```
+
+2. Install dependencies:
+
+```bash
+npm install
+```
+
+3. Start the development server:
+
+```bash
+npm start
+```
+
+## Running the Project
+
+Use either command below to run the Angular development server:
+
+```bash
+npm start
+```
+
+or
 
 ```bash
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+After startup, open:
 
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
+```text
+http://localhost:4200
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+## Project Structure
 
-```bash
-ng generate --help
-```
+Main project folders:
 
-## Building
+- `src/app/leagues` - feature UI components and local state for leagues
+- `src/app/core/services` - API communication and data mapping
+- `src/app/core/models` - domain model definitions
+- `src/app` - app shell, routing, and global app composition
+- `public` - static public files
+- `specs/001-all-leagues` - SpecKit artifacts (specification, plan, research, tasks, contracts)
 
-To build the project run:
+## Design Principles
 
-```bash
-ng build
-```
+The UI direction is based on:
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+- clean dashboard layout
+- minimalistic interface with high readability
+- card-based league presentation
+- responsive behavior across device sizes
+- sports-inspired visual language
 
-## Testing policy
+## Additional Notes
 
-This project intentionally excludes automated testing to keep the codebase and
-tooling minimal.
-
-- No unit tests
-- No integration tests
-- No end-to-end tests
-- No test frameworks
-
-Validation is performed manually during development.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+- Angular CLI version: 21.2.1
+- Build command: `npm run build`
