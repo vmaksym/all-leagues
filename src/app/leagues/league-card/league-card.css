@@ -42,7 +42,6 @@
 }
 
 .league-card__hint {
-  margin: 0.75rem 0 0;
   font-size: 0.82rem;
   color: var(--color-accent-strong);
 }
@@ -78,6 +77,7 @@
 }
 
 .league-card__id {
+  white-space: nowrap;
   margin: 0;
   font-size: 0.74rem;
   color: #5f7268;
