@@ -35,11 +35,11 @@
 
 .dashboard-sidebar,
 .badge-panel,
-.status-panel {
+.status-panel,
+.league-grid {
   border: 1px solid var(--color-border);
   border-radius: 14px;
   background: var(--color-surface);
-  box-shadow: 0 8px 24px rgba(15, 61, 46, 0.08);
 }
 
 .dashboard-sidebar,
@@ -72,9 +72,8 @@
 
 .control-group input:focus-visible,
 .control-group select:focus-visible {
-  border-color: var(--color-accent);
-  box-shadow: 0 0 0 3px var(--color-focus);
-  outline: none;
+  outline: 3px solid var(--color-focus);
+  outline-offset: 1px;
 }
 
 .sidebar-meta {
@@ -96,14 +95,13 @@
 .league-grid {
   display: grid;
   gap: 0.9rem;
-  padding: 0.2rem;
+  padding: 0.9rem;
   grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
 }
 
 .badge-panel h2 {
   margin: 0;
   font-size: 1.05rem;
-  color: var(--color-text);
 }
 
 .badge-panel__title {
@@ -117,12 +115,6 @@
   font-size: 0.9rem;
 }
 
-.badge-panel img {
-  width: 100%;
-  max-width: 240px;
-  height: auto;
-  border-radius: 12px;
-}
 
 .badge-panel__empty {
   margin-top: 0.75rem;
@@ -139,17 +131,12 @@
   justify-content: center;
 }
 
-.badge-panel__media--filled {
-  background: linear-gradient(135deg, #f7fffa, #ecf8f1);
-}
-
 .badge-panel__media--placeholder {
   background: #edf1f4;
 }
 
 .badge-panel__placeholder-content {
   text-align: center;
-  color: #62727f;
 }
 
 .badge-panel__placeholder-icon {
